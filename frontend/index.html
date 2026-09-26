@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prep Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            📘PlacementPrep        </div>
+
+        <ul class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#dsa">DSA Tracker</a>
+            <a href="#notes">Notes</a>
+            <a href="#interview">Interview</a>
+            <a href="#resume">Resume</a>
+        </ul>
+
+        <button class="login-btn" id="auth-btn">
+    Logout
+</button>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+    <section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Master Your <span>Placement</span> Journey</h1>
+
+        <p>
+            Prepare for DSA, Technical Interviews,
+            Resume Building, and Track your Progress
+            in one platform.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn">Get Started</button>
+
+            <button class="secondary-btn">Learn More</button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="assets/images/hero.png" alt="Hero Image">
+
+    </div>
+
+</section>
+<section class="stats" id="stats">
+
+    <div class="stat-card stat-dsa" id="dsa-stats-card">
+    <h2>500+</h2>
+    <p>DSA Questions</p>
+</div>
+
+    <div class="stat-card stat-interview">
+
+        <h2>100+</h2>
+
+        <p>Interview Questions</p>
+
+    </div>
+
+    <div class="stat-card stat-notes">
+
+        <h2>50+</h2>
+
+        <p>Notes</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>95%</h2>
+
+        <p>Placement Success</p>
+
+    </div>
+
+</section>
+
+<section class="features" id="features">
+
+    <h2>Everything You Need for Placement Preparation</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <h3>
+    <span class="icon">📘</span>
+    DSA Tracker
+</h3>
+            <p>Track your daily DSA progress.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>
+    <span class="icon">📝</span>
+    Notes
+</h3>
+            <p>Store important interview notes.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>
+    <span class="icon">💼</span>
+    Resume Builder
+</h3>
+            <p>Create an ATS-friendly resume.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>
+    <span class="icon">🎤</span>
+    Mock Interview
+</h3>
+            <p>Practice common interview questions.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>
+    <span class="icon">📅</span>
+    Study Planner
+</h3>
+            <p>Plan your daily preparation.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>
+    <span class="icon">📊</span>
+    Progress Dashboard
+</h3>
+            <p>Visualize your learning journey.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dsa-section" id="dsa">
+
+    <h2>DSA Progress Tracker</h2>
+
+    <div class="dsa-form">
+
+        <label for="questions">Questions Solved</label>
+
+        <input 
+    type="number" 
+    id="questions" 
+    placeholder="Enter number of questions"
+    min="0"
+>
+
+        <label for="difficulty">Difficulty</label>
+
+        <select id="difficulty">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+        <label for="topic">Topic</label>
+
+<select id="topic">
+    <option value="Arrays">Arrays</option>
+    <option value="Strings">Strings</option>
+    <option value="Binary Search">Binary Search</option>
+    <option value="Sorting">Sorting</option>
+    <option value="Linked List">Linked List</option>
+    <option value="Stack">Stack</option>
+    <option value="Queue">Queue</option>
+    <option value="Recursion">Recursion</option>
+    <option value="Trees">Trees</option>
+    <option value="BST">BST</option>
+    <option value="Sliding Window">Sliding Window</option>
+    <option value="Two Pointers">Two Pointers</option>
+</select>
+
+<label for="platform">Platform</label>
+
+<select id="platform">
+    <option value="LeetCode">LeetCode</option>
+    <option value="GeeksforGeeks">GeeksforGeeks</option>
+    <option value="CodeChef">CodeChef</option>
+    <option value="CodeStudio">CodeStudio</option>
+    <option value="Other">Other</option>
+</select>
+        <label for="progress-date">Date</label>
+
+<input type="date" id="progress-date">
+
+        <button id="save-progress">Save Progress</button>
+        <div class="progress-filters">
+
+    <input
+        type="text"
+        id="search-progress"
+        placeholder="Search by topic..."
+    >
+
+    <select id="filter-difficulty">
+        <option value="All">All Difficulties</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
+
+    <select id="filter-platform">
+        <option value="All">All Platforms</option>
+        <option value="LeetCode">LeetCode</option>
+        <option value="GeeksforGeeks">GeeksforGeeks</option>
+        <option value="CodeChef">CodeChef</option>
+        <option value="CodeStudio">CodeStudio</option>
+        <option value="Other">Other</option>
+    </select>
+
+</div>
+        <div id="progress-result"></div>
+        <div class="recent-progress">
+    <h2>Recent Progress</h2>
+    <div id="recent-progress-list"></div>
+</div>
+       <div class="progress-summary">
+
+    <div class="summary-card">
+        <h3>Total Questions</h3>
+        <div id="total-progress"></div>
+    </div>
+    <div class="analytics-section">
+    <h2>Progress Analytics</h2>
+    <canvas id="difficultyChart"></canvas>
+</div>
+
+    <div class="summary-card">
+        <h3>Target Questions</h3>
+        <input type="number" id="target-questions" min="1" placeholder="Enter target">
+    </div>
+
+    <div class="summary-card">
+        <h3>Progress</h3>
+        <div id="progress-percentage"></div>
+    </div>
+
+    <div class="summary-card">
+        <h3>Difficulty</h3>
+        <div id="difficulty-progress"></div>
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+<!-- ==================== DSA QUESTION BANK ==================== -->
+
+<section class="dsa-bank-section" id="dsa-bank">
+
+    <h2>DSA Question Bank</h2>
+
+    <p class="section-subtitle">
+        Practice 500+ DSA questions with problems, approaches,
+        complexity and interview explanations.
+    </p>
+
+    <div class="dsa-bank-filters">
+
+        <input
+            type="text"
+            id="search-dsa"
+            placeholder="Search DSA questions..."
+        >
+
+        <select id="dsa-topic-filter">
+            <option value="All">All Topics</option>
+            <option value="Arrays">Arrays</option>
+            <option value="Strings">Strings</option>
+            <option value="Binary Search">Binary Search</option>
+            <option value="Sorting">Sorting</option>
+            <option value="Two Pointers">Two Pointers</option>
+            <option value="Sliding Window">Sliding Window</option>
+            <option value="Hashing">Hashing</option>
+            <option value="Linked List">Linked List</option>
+            <option value="Stack">Stack</option>
+            <option value="Queue">Queue</option>
+            <option value="Recursion">Recursion</option>
+            <option value="Trees">Trees</option>
+            <option value="BST">BST</option>
+            <option value="Heap">Heap</option>
+            <option value="Greedy">Greedy</option>
+            <option value="Graphs">Graphs</option>
+            <option value="Dynamic Programming">Dynamic Programming</option>
+            <option value="Bit Manipulation">Bit Manipulation</option>
+        </select>
+
+        <select id="dsa-difficulty-filter">
+            <option value="All">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+
+        <select id="dsa-platform-filter">
+            <option value="All">All Platforms</option>
+            <option value="LeetCode">LeetCode</option>
+            <option value="GeeksforGeeks">GeeksforGeeks</option>
+            <option value="CodeChef">CodeChef</option>
+            <option value="CodeStudio">CodeStudio</option>
+        </select>
+
+    </div>
+
+    <div id="dsa-question-list"></div>
+
+</section>
+
+<section class="notes-section" id="notes">
+
+    <h2>Placement Notes</h2>
+
+    <p class="section-subtitle">
+        Save and organize important notes for your placement preparation.
+    </p>
+
+    <div class="notes-container">
+
+        <div class="notes-form">
+
+            <input
+                type="text"
+                id="note-title"
+                placeholder="Note title"
+            >
+
+            <select id="note-category">
+                <option value="DSA">DSA</option>
+                <option value="DBMS">DBMS</option>
+                <option value="OS">Operating System</option>
+                <option value="CN">Computer Networks</option>
+                <option value="OOP">OOP</option>
+                <option value="Interview">Interview</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <textarea
+                id="note-content"
+                placeholder="Write your note here..."
+                rows="6"
+            ></textarea>
+
+            <button id="save-note">Save Note</button>
+
+        </div>
+
+        <div class="notes-list-section">
+
+            <input
+                type="text"
+                id="search-notes"
+                placeholder="Search notes..."
+            >
+
+            <div id="notes-list"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="interview-section" id="interview">
+
+    <h2>Interview Preparation</h2>
+
+    <p class="section-subtitle">
+        Practice important technical and HR interview questions.
+    </p>
+
+    <div class="interview-container">
+
+        <div class="interview-filters">
+
+            <input
+                type="text"
+                id="search-interview"
+                placeholder="Search interview questions..."
+            >
+
+           <select id="interview-category">
+
+    <option value="All">All Categories</option>
+
+    <option value="JavaScript">JavaScript</option>
+
+    <option value="Node.js">Node.js</option>
+
+    <option value="Express.js">Express.js</option>
+
+    <option value="MongoDB">MongoDB</option>
+
+    <option value="DBMS">DBMS</option>
+
+    <option value="OS">Operating System</option>
+
+    <option value="Computer Networks">Computer Networks</option>
+
+   
+
+    <option value="OOP">OOP</option>
+
+    <option value="HR">HR</option>
+
+</select>
+
+        </div>
+
+        <div id="interview-list"></div>
+
+    </div>
+
+</section>
+
+<section class="resume-section" id="resume">
+
+    <h2>Resume Builder</h2>
+
+    <p class="section-subtitle">
+        Create a simple and professional resume for your placement journey.
+    </p>
+
+    <div class="resume-container">
+
+        <div class="resume-form">
+
+            <h3>Personal Information</h3>
+
+            <input
+                type="text"
+                id="resume-name"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="email"
+                id="resume-email"
+                placeholder="Email"
+            >
+
+            <input
+                type="text"
+                id="resume-phone"
+                placeholder="Phone Number"
+            >
+
+            <input
+                type="text"
+                id="resume-github"
+                placeholder="GitHub Profile"
+            >
+
+            <input
+                type="text"
+                id="resume-linkedin"
+                placeholder="LinkedIn Profile"
+            >
+
+            <h3>Education</h3>
+
+            <textarea
+                id="resume-education"
+                placeholder="Enter your education details..."
+                rows="4"
+            ></textarea>
+
+            <h3>Skills</h3>
+
+            <textarea
+                id="resume-skills"
+                placeholder="Example: C++, JavaScript, Node.js, MongoDB..."
+                rows="4"
+            ></textarea>
+
+            <h3>Projects</h3>
+
+            <textarea
+                id="resume-projects"
+                placeholder="Enter your project details..."
+                rows="5"
+            ></textarea>
+
+            <h3>Experience / Achievements</h3>
+
+            <textarea
+                id="resume-experience"
+                placeholder="Enter internships, achievements or experience..."
+                rows="5"
+            ></textarea>
+
+            <button id="generate-resume">
+                Generate Resume
+            </button>
+            <button id="print-resume">
+    Print / Save as PDF
+</button>
+
+        </div>
+
+        <div class="resume-preview">
+
+            <h3>Resume Preview</h3>
+
+            <div id="resume-output">
+                <p>Your resume preview will appear here.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <h2>PlacementPrep</h2>
+
+            <p>
+                Helping students crack placements with
+                DSA, Projects and Interview Preparation.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#dsa">DSA Tracker</a></li>
+    <li><a href="#notes">Notes</a></li>
+    <li><a href="#interview">Interview</a></li>
+    <li><a href="#resume">Resume</a></li>
+</ul>
+
+        </div>
+
+        <div class="footer-contact">
+
+    <h3>Contact</h3>
+
+    <p>📧 placementprep@gmail.com</p>
+
+    <p><a href="https://github.com/" target="_blank">🐱 GitHub</a></p>
+
+    <p><a href="https://linkedin.com/" target="_blank">💼 LinkedIn</a></p>
+
+</div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Placement Prep Portal. All Rights Reserved.
+    </p>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>    
+</body>
+</html>
